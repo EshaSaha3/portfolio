@@ -12,6 +12,7 @@
 
 <!-- ===== Header ===== -->
 <header>
+  
     <nav class="navbar">
         <div class="logo">MyPortfolio</div>
         <ul class="nav-links">
@@ -21,6 +22,8 @@
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+         <!-- Dark/Light Toggle Button -->
+  <button id="theme-toggle">🌙</button>
     </nav>
 </header>
 
@@ -116,37 +119,42 @@ I see myself as <strong>learner, a creator, and a dreamer</strong> – determine
   </div>
 </section>
 
-<!-- ===== Projects Section ===== -->
-<section id="projects" class="projects-section">
+<section id="projects" class="reveal">
   <h2>My Projects</h2>
   <div class="projects-grid">
-
-    <!-- Project 1 -->
-    <div class="project-card">
+    <div class="project-card" data-title="Coffee Shop App" data-desc="Android app using Java & Firebase. Allows ordering coffee with real-time database support." data-tech="Java, Firebase, Android Studio" data-link="#">
       <h3>Coffee Shop App</h3>
-      <p>Android app built with Java and Firebase in android studio. Allows users to order various coffee types with real-time database functionality.</p>
+      <p>Click to see more</p>
     </div>
 
-    <!-- Project 2 -->
-    <div class="project-card">
-      <h3>Garments Factory </h3>
-      <p>Object-Oriented Programming project simulating a garments factory system with inventory and order management using C++.</p>
+    <div class="project-card" data-title="Garments Factory" data-desc="OOP Project simulating inventory & order management system for garments factory." data-tech="C++" data-link="#">
+      <h3>Garments Factory</h3>
+      <p>Click to see more</p>
     </div>
 
-    <!-- Project 3 -->
-    <div class="project-card">
+    <div class="project-card" data-title="Mini Computer" data-desc="Computer Architecture project building a mini-computer model with basic CPU operations and memory management simulation." data-tech="C++, Digital Logic" data-link="#">
       <h3>Mini Computer</h3>
-      <p>Computer Architecture project building a mini-computer model with basic CPU operations and memory management simulation.</p>
+      <p>Click to see more</p>
     </div>
 
-    <!-- Project 4 -->
-    <div class="project-card">
-      <h3>Digital Clock </h3>
-      <p>Digital Logic Design project creating a working digital clock using flip-flops and logic circuits to display time accurately .</p>
+    <div class="project-card" data-title="Digital Clock" data-desc="Digital Logic Design project creating a working digital clock using flip-flops and logic circuits to display time accurately." data-tech="Digital Logic" data-link="#">
+      <h3>Digital Clock</h3>
+      <p>Click to see more</p>
     </div>
-
   </div>
 </section>
+
+<!-- Modal Popup -->
+<div id="project-modal" class="modal">
+  <div class="modal-content">
+    <span id="close-modal">&times;</span>
+    <h3 id="modal-title"></h3>
+    <p id="modal-desc"></p>
+    <p><strong>Technologies:</strong> <span id="modal-tech"></span></p>
+  </div>
+</div>
+
+
 
 
 <section id="contact" class="contact-section">
@@ -191,6 +199,7 @@ I see myself as <strong>learner, a creator, and a dreamer</strong> – determine
         }
     }());
 </script>
+<script src="script.js"></script>
 
 </body>
 </html>
