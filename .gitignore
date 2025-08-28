@@ -1,0 +1,17 @@
+#ignore visual studio temporary files
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.log
+
+#ignore build results
+*.dll
+*.exe
+*.pdb
+
+#ignore publish profiles
+Properties/PublishProfiles/
+
