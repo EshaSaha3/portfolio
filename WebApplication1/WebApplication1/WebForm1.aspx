@@ -4,6 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+
     <title></title>
 </head>
 <body>
@@ -27,16 +33,25 @@
 <header>
   
     <nav class="navbar">
+        
+
         <div class="logo">MyPortfolio</div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
+           <!--<li><a href="Labs.aspx">Labs</a></li> -->
             <li><a href="#contact">Contact</a></li>
+            <li> <a href= "#feedback">Feedback</a></li>     
+
         </ul>
-         <!-- Dark/Light Toggle Button -->
-  <button id="theme-toggle">🌙</button>
+         
+ <!-- Theme toggle button -->
+<button id="theme-toggle">🌙</button>
+
+
+
     </nav>
 </header>
 
@@ -52,6 +67,8 @@
             <p>Computer Science Student | Web Developer | Tech Enthusiast</p>
             <a href="#projects" class="btn">View My Work</a>
             <a href="#contact" class="btn btn-outline">Contact Me</a>
+            <a href="files/Esha_Saha_CV.pdf" download="Esha_Saha_CV.pdf" class="btn">📄 Download CV</a>
+
         </div>
     </div>
 </section>
@@ -67,6 +84,7 @@ Outside the technical world, I’m deeply inspired by <strong>storytelling, art,
 
 I see myself as <strong>learner, a creator, and a dreamer</strong> – determined to grow into a strong, confident individual who blends skills with passion to make a difference.
     </p>
+
 </section>
 
 <!-- ===== Skills Section ===== -->
@@ -186,23 +204,101 @@ I see myself as <strong>learner, a creator, and a dreamer</strong> – determine
 
 
 
-
+<!--
 <section id="contact" class="contact-section">
   <h2>Contact Me</h2>
   <p>Email: <a href="mailto:sahaesha66@gmail.com">sahaesha66@gmail.com</a></p>
   
 
   <!-- Social Media -->
-  <div class="social-links">
+ <!-- <div class="social-links">
     <a href="https://www.facebook.com/share/19vwkEs6xJ/" target="_blank"><i class="fab fa-facebook-f"></i></a>
     <a href="https://www.instagram.com/_panchali_esha?igsh=MWIwYWI5a2ljMjFiaw==" target="_blank"><i class="fab fa-instagram"></i></a>
   </div>
+</section> -->
+
+
+  
+<section id="contact" class="contact-section">
+    <h2>Contact Me</h2>
+
+     <p>Email: <a href="mailto:sahaesha66@gmail.com">sahaesha66@gmail.com</a></p>
+ 
+
+ <!-- Social Media -->
+ <div class="social-links">
+   <a href="https://www.facebook.com/share/19vwkEs6xJ/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+   <a href="https://www.instagram.com/_panchali_esha?igsh=MWIwYWI5a2ljMjFiaw==" target="_blank"><i class="fab fa-instagram"></i></a>
+ </div>
+
+    
+    <p>If you have any questions or want to collaborate, please send me a message!</p>
+
+     <div class="contact-form">
+        <!-- Name -->
+        <asp:TextBox ID="txtName" runat="server" placeholder="Your Name"></asp:TextBox>
+
+        <!-- Email -->
+        <asp:TextBox ID="txtEmail" runat="server" placeholder="Your Email"></asp:TextBox>
+
+        <!-- Message -->
+        <asp:TextBox ID="txtMessage" runat="server" TextMode="MultiLine" placeholder="Your Message"></asp:TextBox>
+
+        <!-- Submit button -->
+        <asp:Button ID="btnSendMessage" runat="server" Text="Send Message" CssClass="btn" OnClick="btnSendMessage_Click" />
+
+        <!-- Status message -->
+        <asp:Label ID="lblStatus" runat="server" CssClass="status-message"></asp:Label>
+    
+
+   
+    </div>
 </section>
+
+
+
+    <!-- ===== Feedback Section ===== -->
+<section id="feedback" class="feedback-section">
+    <h2>Feedback</h2>
+    <p>We value your thoughts! Share your feedback below.</p>
+
+    <div class="feedback-form">
+        <!-- Name -->
+        <asp:TextBox ID="txtFeedbackName" runat="server" placeholder="Your Name" CssClass="input-field"></asp:TextBox>
+
+        <!-- Feedback Message -->
+        <asp:TextBox ID="txtFeedbackMessage" runat="server" TextMode="MultiLine" placeholder="Your Feedback" CssClass="input-field"></asp:TextBox>
+
+        <!-- Submit Button -->
+        <asp:Button ID="btnSubmitFeedback" runat="server" Text="Submit Feedback" CssClass="btn" OnClick="btnSubmitFeedback_Click" />
+
+        <!-- Status Message -->
+        <asp:Label ID="lblFeedbackStatus" runat="server" CssClass="status-message"></asp:Label>
+    </div>
+
+    <!-- Display All Feedback -->
+    <div class="feedback-list">
+        <h3>Recent Feedback</h3>
+        <asp:Repeater ID="rptFeedback" runat="server">
+            <ItemTemplate>
+                <div class="feedback-card">
+                    <h4><%# Eval("Name") %></h4>
+                    <p><%# Eval("Message") %></p>
+                    <span class="date"><%# Eval("CreatedAt", "{0:MMM dd, yyyy}") %></span>
+                </div>
+            </ItemTemplate>
+        </asp:Repeater>
+    </div>
+</section>
+
+
+
+
 
 
 <!-- ===== Footer ===== -->
 <footer>
-    <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+    <p>&copy; 2025 Esha_Saha. All Rights Reserved.</p>
 </footer>
 
 <!-- ===== Typing Animation Script ===== -->

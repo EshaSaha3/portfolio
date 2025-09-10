@@ -346,6 +346,197 @@ header {
 }
 
 
+
+
+/* ===== Contact Section ===== */
+.contact-section {
+    padding: 60px 20px;
+    text-align: center;
+    background: #121212;
+    color: white;
+}
+
+    .contact-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 25px;
+        color: #00ffcc;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+/* Contact form container */
+.contact-form {
+    max-width: 500px;
+    margin: 25px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.15);
+}
+
+    /* Modern input fields */
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    /* .contact-form textarea {
+        width: 100%;
+        padding: 12px 14px;
+        font-size: 1rem;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid #00ffcc;
+        border-radius: 10px;
+        outline: none;
+        transition: all 0.3s ease;
+    }*/
+    .contact-form textarea {
+        width: 100%;
+        padding: 12px 14px;
+        font-size: 1rem;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid #00ffcc;
+        border-radius: 10px;
+        outline: none;
+        transition: all 0.3s ease;
+        box-sizing: border-box;
+    }
+
+
+
+
+
+        /* Glow effect on focus */
+        .contact-form input[type="text"]:focus,
+        .contact-form input[type="email"]:focus,
+        .contact-form textarea:focus {
+            border-color: #00ffaa;
+            box-shadow: 0 0 10px rgba(0, 255, 204, 0.6);
+            background: rgba(0, 255, 204, 0.05);
+        }
+
+        /* Placeholder color */
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: #ccc;
+            opacity: 0.7;
+        }
+
+    /* Textarea resizing off */
+   /* .contact-form textarea {
+        resize: none;
+        height: 100px;
+    }*/
+    /* Contact form textarea fix */
+    .contact-form textarea {
+        resize: none;
+        height: 120px;
+        margin-top: 5px; /* slight adjustment */
+        vertical-align: top; /* aligns nicely with other fields */
+        display: block;
+    }
+
+
+    /* Submit button */
+    .contact-form .btn {
+        background: linear-gradient(90deg, #00ffaa, #00ccff);
+        color: black;
+        padding: 14px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+        .contact-form .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.6);
+        }
+
+
+
+/* ===== Feedback Section ===== */
+.feedback-section {
+    padding: 60px 20px;
+    text-align: center;
+    background: #121212;
+    color: white;
+}
+
+    .feedback-section h2 {
+        color: #00ffcc;
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+.feedback-form {
+    max-width: 500px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
+}
+
+    .feedback-form .input-field {
+        padding: 12px;
+        border: 1px solid #00ffcc;
+        background: rgba(255, 255, 255, 0.05);
+        color: white;
+        border-radius: 8px;
+        font-size: 1rem;
+        outline: none;
+    }
+
+        .feedback-form .input-field:focus {
+            border-color: #00ffaa;
+            box-shadow: 0 0 10px rgba(0, 255, 204, 0.4);
+        }
+
+    .feedback-form .btn {
+        background: linear-gradient(90deg, #00ffaa, #00ccff);
+        color: black;
+        font-weight: bold;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+.feedback-list {
+    max-width: 600px;
+    margin: 40px auto 0;
+    text-align: left;
+}
+
+.feedback-card {
+    background: #1e1e1e;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+    .feedback-card h4 {
+        color: #00ffcc;
+        margin-bottom: 5px;
+    }
+
+    .feedback-card .date {
+        font-size: 0.8rem;
+        color: #888;
+    }
+
+
+
+
+
 /* ===== Footer ===== */
 footer {
     background: #1e1e1e;
@@ -489,5 +680,96 @@ body.dark-mode a {
 
     .lab-card p {
         color: #ccc;
+    }
+
+
+.alt-option {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+    .alt-option span {
+        margin-right: 5px;
+        color: #aaa;
+    }
+
+    .alt-option a {
+        color: teal;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        .alt-option a:hover {
+            color: lightseagreen;
+            text-decoration: underline;
+        }
+
+
+
+
+
+
+
+
+:root {
+    --bg: #ffffff;
+    --text: #111111;
+    --card: #ffffff;
+    --muted: #666666;
+    --accent: #4f46e5;
+    transition: none;
+}
+
+    /* Dark theme variables */
+    :root[data-theme="dark"] {
+        --bg: #0f1115;
+        --text: #f3f4f6;
+        --card: #121316;
+        --muted: #9ca3af;
+        --accent: #8b5cf6;
+    }
+
+/* Apply variables */
+html, body {
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 0.35s ease, color 0.35s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Example components */
+.project-card {
+    background: var(--card);
+    color: var(--text);
+    transition: background 0.35s ease, color 0.35s ease;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 14px rgba(2,6,23,0.06);
+}
+
+/* Toggle button */
+#theme-toggle {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    border: none;
+    background: transparent;
+    padding: 8px 10px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    z-index: 1000;
+    transition: transform 0.12s ease, background-color 0.2s ease;
+}
+
+    #theme-toggle:active {
+        transform: scale(0.96);
+    }
+
+    #theme-toggle[aria-pressed="true"] {
+        background: rgba(255,255,255,0.04);
     }
 
